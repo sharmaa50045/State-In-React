@@ -47,6 +47,7 @@ const InputWithLabel = ({ id, value, type = "text", onInputChange, children }) =
 
 const List = ({ list }) => (
   <ul>
+
     {list.map((item) => (
       <Item key={item.objectID} item={item} />
     ))}
@@ -55,7 +56,7 @@ const List = ({ list }) => (
 
 const Item = ({ item }) => (
   <li>
-    <strong>{item.title}</strong> — {item.author}
+    <a href={item.objectID}>{item.title}</a> -{item.author}
   </li>
 );
 
