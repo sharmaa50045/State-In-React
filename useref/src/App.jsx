@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 import { useRef } from 'react'
 
 const App = () => {
-  const [searchTerm, setSearchTerm] = useState("React");
+  const [searchTerm, setSearchTerm] = useState("Autofoucs");
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
@@ -31,7 +31,7 @@ const InputWithLabel = ({
   type = "text",
   onInputChange,
   isFocused,
-  Children,
+  children,
 }) => {
   const inputRef = useRef();
 
@@ -45,7 +45,7 @@ const InputWithLabel = ({
   return (
     <>
 
-      <label htmlFor={id}>{Children}</label>
+      <label htmlFor={id}>{children}</label>
       &nbsp;
       <input
         ref={inputRef}
