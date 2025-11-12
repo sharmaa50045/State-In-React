@@ -12,7 +12,7 @@ const App = () => {
   return (
     <div>
       <h1>My Hacker Story</h1>
-      {/* {} */}
+
       <InputWithLabel
         id="search"
         value={searchTerm}

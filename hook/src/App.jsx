@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-// ✅ Custom Hook - useStorageState
 function useStorageState(key, initialState) {
   const [value, setValue] = useState(() => {
     return localStorage.getItem(key) || initialState;
@@ -12,8 +11,6 @@ function useStorageState(key, initialState) {
 
   return [value, setValue];
 }
-
-// ✅ App Component
 function App() {
   const stories = [
     { id: 0, title: "React Basics", author: "Jordan Walke" },
@@ -21,10 +18,9 @@ function App() {
     { id: 2, title: "Advanced JavaScript", author: "Brendan Eich" },
   ];
 
-  // Using our custom hook
   const [searchTerm, setSearchTerm] = useStorageState("search", "React");
 
-  // Handler for input
+
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
   };
@@ -42,8 +38,6 @@ function App() {
     </div>
   );
 }
-
-// ✅ Search Component
 const Search = ({ search, onSearch }) => (
   <div>
     <label htmlFor="search">Search: </label>
@@ -51,7 +45,6 @@ const Search = ({ search, onSearch }) => (
   </div>
 );
 
-// ✅ List Component
 const List = ({ list }) => (
   <ul>
     {list.map((item) => (
@@ -60,7 +53,7 @@ const List = ({ list }) => (
   </ul>
 );
 
-// ✅ Item Component
+
 const Item = ({ item }) => (
   <li>
     <span>{item.title}</span> <br />
